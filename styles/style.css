@@ -1,0 +1,25 @@
+img {
+    position: absolute;
+    width: 100px;
+    cursor: pointer;
+}
+
+div {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+#rightSide {
+    left: 500px;
+    border-left: 1px solid;
+}
+
+button {
+    border: none;
+    background-color: rgb(251, 139, 252);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-style: outset;
+}
