@@ -3,12 +3,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#fruit {
-    position: absolute;
-    width: 100px;
-    cursor: pointer;
-}
-
 .header {
     display: block;
     margin-left: auto;
@@ -18,8 +12,6 @@ body {
     padding: 10px;
     height: auto;
 }
-
-
 
 .info {
     text-align: center;
@@ -31,42 +23,70 @@ body {
     font-weight: bold;
     justify-content: space-evenly;
     margin: 10px;
-    
+    font-size: 20px;
 }
 
-#startBtn,
-#resetBtn {
-    background-color: rgb(136, 189, 238);
+.btn {
+    background-color: rgb(238, 214, 136);
     font-weight: 600;
     border: none;
-    box-shadow: 0px 0px 5px rgb(181, 181, 182);
+    box-shadow: 0px 0px 3px rgb(181, 181, 182);
     padding:  10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 
-.instruction {
+/* .instruction {
     color:rgb(64, 64, 64);
     font-weight: 600;
-}
+} */
 
-#leftSide,
-#rightSide {
+.leftSide,
+.rightSide {
     position: absolute;
     width: 50%;
     height: 500px;
     background-color: rgb(238, 240, 189);
 }
 
-#rightSide {
+.rightSide {
     left: 50%;
     border-left: 6px solid rgb(255, 255, 255);
 }
 
-button {
-    border: none;
-    background-color: rgb(251, 139, 252);
-    padding: 10px;
+#fruit {
+    position: absolute;
+    width: 100px;
     cursor: pointer;
-    border-radius: 5px;
-    border-style: outset;
+}
+
+.popUp {
+    width: 400px;
+    background-color: rgb(155, 129, 222);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    visibility: hidden;
+    text-align: center;
+    padding: 0 30px 30px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    visibility: visible;
+}
+
+.popUp img {
+    width: 50%;
+}
+
+.popUp button {
+    background-color: rgb(239, 238, 238);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }

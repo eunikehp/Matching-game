@@ -18,8 +18,8 @@
 
     
     <div class="info">
-        <button id="startBtn">Start Game</button>
-        <button id="resetBtn">Reset Game</button>
+        <button class="btn" id="startBtn">START GAME</button>
+        <button class="btn" id="resetBtn">RESET GAME</button>
         <div class="scoreRow">
             <div>Score: <span id="score">0</span></div>
             <div>High Score: <span id="highScore">0</span></div>
@@ -28,8 +28,14 @@
     </div>
 
     <div class="box">
-        <div id="leftSide"></div>
-        <div id="rightSide"></div>
+        <div class= "leftSide" id="leftSide"></div>
+        <div class="rightSide" id="rightSide"></div>
+    </div>
+
+    <div class="popUp" id="popUp">
+        <img src="img/sad.png" alt="sad-face">
+        <h2>GAME OVER!</h2>
+        <button class="btn" type="button" id="closePopUp">Try Again!</button>
     </div>
     
     <script src="script.js"></script>
