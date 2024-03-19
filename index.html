@@ -10,12 +10,9 @@
 </head>
 
 <body>
-    
-        <!-- <img src="img/1.png" alt="apple">
-        <h1>Fruit Matching Game</h1>
-        <div class="instruction">Instruction: Click on the extra fruit on the left.</div> -->
-    <img class='header' src="img/header.png" alt="header">
-
+    <div class='header'>
+        <img src="img/header.png" alt="header">
+    </div>
     
     <div class="info">
         <button class="btn" id="startBtn">START GAME</button>
@@ -32,11 +29,14 @@
         <div class="rightSide" id="rightSide"></div>
     </div>
 
-    <div class="popUp" id="popUp">
+    <div class="popUpGameOver" id="popUpGameOver">
         <img src="img/sad.png" alt="sad-face">
         <h2>GAME OVER!</h2>
+        <div id="notifDiv"></div>
         <button class="btn" type="button" id="closePopUp">Try Again!</button>
     </div>
+
+    
     
     <script src="script.js"></script>
 </body>

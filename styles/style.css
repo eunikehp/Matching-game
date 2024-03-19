@@ -4,13 +4,13 @@ body {
 }
 
 .header {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    max-width: 700px;
+    display: flex;
+    justify-content: center;
     padding: 10px;
-    height: auto;
+}
+
+.header img {
+    width: 700px;
 }
 
 .info {
@@ -55,13 +55,13 @@ body {
     border-left: 6px solid rgb(255, 255, 255);
 }
 
-#fruit {
+.fruit {
     position: absolute;
-    width: 100px;
+    width: 70px;
     cursor: pointer;
 }
 
-.popUp {
+.popUpGameOver {
     width: 400px;
     background-color: rgb(155, 129, 222);
     border-radius: 10px;
@@ -82,11 +82,11 @@ body {
     visibility: visible;
 }
 
-.popUp img {
+.popUpGameOver img {
     width: 50%;
 }
 
-.popUp button {
+.popUpGameOver button {
     background-color: rgb(239, 238, 238);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }

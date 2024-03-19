@@ -26,6 +26,7 @@ function generateFruit() {
         fruit.style.top = randomTop + 'px';
         fruit.style.left = randomLeft + 'px';
         fruit.id = 'fruit';
+        fruit.classList.add('fruit');
 
         theLeftSide.appendChild(fruit);
     }
@@ -35,7 +36,6 @@ function generateFruit() {
     theRightSide.appendChild(leftSideImages);
 
     theLeftSide.lastChild.addEventListener('click', nextScore);
-    theLeftSide.lastChild.addEventListener('click', theHighScore);
     theLeftSide.addEventListener('click', gameOver);
 };
 
@@ -57,13 +57,18 @@ function nextScore(event) {
     generateFruit();
 }
 
+const notifDiv = document.querySelector('#notifDiv');
+const newNotif= document.createElement('div');
+
 function theHighScore() {
     //add highscore
-    if (numOfScore <= numOfHighScore) {
-        return numOfHighScore;
-    } else {
-        numOfHighScore += 100;
-        highScore.innerText = numOfHighScore;
+    const currentScore = numOfScore;
+    if(currentScore > numOfHighScore) {
+        newNotif.innerText=`NEW HIGH SCORE! ${currentScore}`;
+        newNotif.style.marginBottom = '30px';
+        let currentHighScore = currentScore;
+        highScore.innerText = currentHighScore;
+        notifDiv.appendChild(newNotif);
     }
 }
 
@@ -89,7 +94,7 @@ function resetGame(event) {
 // game over
 function gameOver(event) {
     event.stopPropagation();
-    // alert('Game Over!');
+    theHighScore();
     openPopUp();
     theLeftSide.removeEventListener('click', gameOver);
     theLeftSide.lastChild.removeEventListener('click', nextScore);
@@ -104,8 +109,8 @@ function gameOver(event) {
     numOfFruits = 5;
 }
 
-// Pop Up 
-const PopUp = document.querySelector('#popUp')
+// Pop Up Game Over
+const PopUp = document.querySelector('#popUpGameOver')
 function openPopUp() {
     PopUp.classList.add('open-popup');
 }
@@ -113,4 +118,7 @@ function openPopUp() {
 document.querySelector('#closePopUp').addEventListener('click', closePopUp)
 function closePopUp() {
     PopUp.classList.remove('open-popup');
+    while (notifDiv.firstChild) {
+        notifDiv.removeChild(notifDiv.firstChild);
+    }
 }
