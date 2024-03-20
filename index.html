@@ -4,40 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATCHING GAME</title>
+    <title>FRUIT MATCHING GAME</title>
 
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
-    <div class='header'>
-        <img src="img/header.png" alt="header">
-    </div>
-    
-    <div class="info">
-        <button class="btn" id="startBtn">START GAME</button>
-        <button class="btn" id="resetBtn">RESET GAME</button>
-        <div class="scoreRow">
-            <div>Score: <span id="score">0</span></div>
-            <div>High Score: <span id="highScore">0</span></div>
+    <div class="container">
+        <div class='header'>
+            <img src="img/header.png" alt="header">
         </div>
-        
+
+        <div class="info">
+            <img src="img/play.png" id="startBtn" alt="play">
+            <img src="img/reset.png" id="resetBtn" alt="reset">
+            <div class="scoreRow">
+                <div>Score: <span id="score">0</span></div>
+                <div id="showLevel"></div>
+                <div>High Score: <span id="highScore">0</span></div>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <div class="leftSide" id="leftSide">
+                <!-- <img src="img/background.png" class="background" alt="play"> -->
+            </div>
+            <div class="rightSide" id="rightSide">
+                <!-- <img src="img/background.png" class="background" alt="play"> -->
+            </div>
+        </div>
+
+        <div class="popUpGameOver" id="popUpGameOver">
+            <img class='cat' id="cat">
+            <h2>GAME OVER!</h2>
+            <div id="notifDiv"></div>
+            <!-- <button class="btn" type="button" id="playAgain">Play Again</button>
+            <button class="btn" type="button" id="quit">Quit</button> -->
+            <img src="img/playagain.png" class="imgbtn" id="playAgain" alt="play again">
+            <img src="img/quit.png" class="imgbtn" id="quit" alt="quit">
+        </div>
+
+        <div class="popUpLevel" id="popUpLevel">
+            <img src="img/selectlevel.png" class="selectLevel" alt="select level">
+            <div class="level">
+                <img class="star" id="easy" src="img/easy.png" alt="easy">
+                <img class="star" id="medium" src="img/medium.png" alt="medium">
+                <img class="star" id="hard" src="img/hard.png" alt="hard">
+            </div>
+
+        </div>
     </div>
 
-    <div class="box">
-        <div class= "leftSide" id="leftSide"></div>
-        <div class="rightSide" id="rightSide"></div>
-    </div>
 
-    <div class="popUpGameOver" id="popUpGameOver">
-        <img src="img/sad.png" alt="sad-face">
-        <h2>GAME OVER!</h2>
-        <div id="notifDiv"></div>
-        <button class="btn" type="button" id="closePopUp">Try Again!</button>
-    </div>
-
-    
-    
     <script src="script.js"></script>
 </body>
 
