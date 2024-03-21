@@ -4,7 +4,6 @@ fruitImg = [1, 2, 3, 4, 5, 6]
 // initial value of variables
 let numOfFruits = 0;
 let level = "";
-let currentLevel = "";
 
 //DOM -Score
 let score = document.querySelector('#score');
@@ -44,6 +43,7 @@ hardLevel.addEventListener('click', closePopUpLevel);
 
 // playGame Function
 function playGame(level) {
+
     console.log(`level: ${level} start: ${numOfFruits}`)
     if (level == 'Easy') {
         numOfFruits = 3;
@@ -79,16 +79,45 @@ function generateFruit(level) {
     leftSideImages.removeChild(leftSideImages.lastChild);
     theRightSide.appendChild(leftSideImages);
 
-    console.log(`level: ${level} status: ${numOfFruits}`)
+    console.log(`level: ${level} status: ${numOfFruits}`);
+    // getFunction(level);
     if (level == 'Easy') {
         theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Easy'));
+        console.log("press easy last child button")
+        theLeftSide.addEventListener('click', (event) => gameOver(event,'Easy'));
+        console.log("press easy button")
     } else if (level == 'Medium') {
         theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Medium'));
-    } else {
+        theLeftSide.addEventListener('click', (event) => gameOver(event,'Medium'));
+        console.log("press medium button")
+    } else if (level == 'Hard'){
         theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Hard'));
+        theLeftSide.addEventListener('click', (event) => gameOver(event,'Hard'));
+        console.log("press hard button")
     }
-    theLeftSide.addEventListener('click', gameOver);
+
 };
+
+// function getFunction(level) {
+//     switch (level) {
+//         case 'Easy':
+//             theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Easy'));
+//             theLeftSide.addEventListener('click', (event) => gameOver(event, 'Easy'));
+//             console.log("press button")
+//             break;
+//         case 'Medium':
+//             theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Medium'));
+//             // theLeftSide.addEventListener('click', (event) => gameOver(event, 'Medium'));
+//             break;
+//         case 'Hard':
+//             theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Hard'));
+//             // theLeftSide.addEventListener('click', (event) => gameOver(event, 'Hard'));
+//             break;
+//         default:
+//             console.log("Invalid function");
+//     }
+// }
+
 
 // adding score if the guess is right
 function nextScore(event, level) {
@@ -119,13 +148,16 @@ const notifDiv = document.querySelector('#notifDiv');
 const newNotif = document.createElement('div');
 const catDiv = document.querySelector("#cat")
 
+
+let currentHighScore = 0;
 function theHighScore() {
-    const currentScore = numOfScore;
-    if (currentScore > numOfHighScore) {
+    let currentScore = numOfScore;
+    console.log(`currentScore: ${currentScore} currentHS: ${currentHighScore}`)
+    if (currentScore > currentHighScore) {
         newNotif.innerText = `NEW HIGH SCORE! ${currentScore}`;
-        newNotif.style.marginBottom = '30px';
-        let currentHighScore = currentScore;
+        currentHighScore = currentScore;
         highScore.innerText = currentHighScore;
+        newNotif.style.marginBottom = '30px';
         notifDiv.appendChild(newNotif);
         catDiv.src = "img/happy.png";
     } else {
@@ -137,31 +169,48 @@ function theHighScore() {
 document.querySelector('#resetBtn').addEventListener('click', resetGame);
 function resetGame(event) {
     event.stopPropagation();
+    numOfHighScore = 0;
+    highScore.innerText = 0;
+    currentHighScore = 0;
     removeListener();
+    document.querySelector('#showLevel').innerText = "";
 };
 
-
 // game over Function
-function gameOver(event) {
+function gameOver(event,level) {
+    console.log('showGameOver');
     event.stopPropagation();
     theHighScore();
     openPopUpGameOver();
     removeListener();
 
-    //Quit Function
-    document.querySelector('#quit').addEventListener('click', closePopUp);
-    document.querySelector('#playAgain').addEventListener('click', closePopUp);
-    document.querySelector('#playAgain').addEventListener('click', openPopUpLevel);
-
+    console.log('end showGameOver');
+    //removeEventListener
     easyLevel.removeEventListener('click', (event) => playGame(event, 'Easy'));
     mediumLevel.removeEventListener('click', (event) => playGame(event, 'Medium'));
     hardLevel.removeEventListener('click', (event) => playGame(event, 'Hard'));
+
+    // Quit Function
+    document.querySelector('#quit').addEventListener('click', quitGame);
+    document.querySelector('#playAgain').addEventListener('click', closePopUp);
+
+    // event.stopPropagation();
+    if (level == 'Easy') {
+        document.querySelector('#playAgain').addEventListener('click', playGame('Easy'));
+    } else if (level == 'Medium') {
+        document.querySelector('#playAgain').addEventListener('click', playGame('Medium'));
+    } else {
+        document.querySelector('#playAgain').addEventListener('click', playGame('Hard'));
+    }
 }
+
 
 // Open Pop Up  and Close Pop Up Game Over
 function openPopUpGameOver() {
     document.querySelector('#popUpGameOver').classList.add('open-popup');
+    console.log("open works")
 };
+
 function closePopUp() {
     document.querySelector('#popUpGameOver').classList.remove('open-popup');
     while (notifDiv.firstChild) {
@@ -169,19 +218,34 @@ function closePopUp() {
     };
 };
 
+function quitGame(event) {
+    document.querySelector('#popUpGameOver').classList.remove('open-popup');
+    while (notifDiv.firstChild) {
+        notifDiv.removeChild(notifDiv.firstChild);
+    };
+    resetGame(event);
+};
+
 //removeEventListener
 function removeListener() {
-    theLeftSide.removeEventListener('click', gameOver);
-    theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Easy'));
-    theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Medium'));
-    theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Hard'));
+    // // theLeftSide.removeEventListener('click', gameOver);
+    theLeftSide.removeEventListener('click', () => gameOver('Easy'));
+    theLeftSide.removeEventListener('click', () => gameOver('Medium'));
+    theLeftSide.removeEventListener('click', () => gameOver('Hard'));
+
+    // theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Easy'));
+    // theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Medium'));
+    // theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Hard'));
     while (theLeftSide.firstChild) {
         theLeftSide.removeChild(theLeftSide.firstChild);
+        console.log("remove left works")
     }
     while (theRightSide.firstChild) {
         theRightSide.removeChild(theRightSide.firstChild);
+        console.log("remove right works")
     }
     score.innerText = 0;
     numOfScore = 0;
     numOfFruits = 0;
-}
+    console.log("end of removelistener")
+};
