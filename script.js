@@ -50,7 +50,7 @@ hardLevel.addEventListener('click', closePopUpLevel);
 
 // playGame Function
 function playGame(level) {
-    console.log(`level: ${level} start: ${numOfFruits}`)
+    // console.log(`level: ${level} start: ${numOfFruits}`)
     if (level == 'Easy') {
         numOfFruits = 3;
         generateFruit('Easy');
@@ -72,34 +72,31 @@ function generateFruit(level) {
         // fruit.src = `img/${randomImg}.png`;
         fruit.src = `/${randomImg}.png`;
 
-        const randomTop = Math.floor(Math.random() * 400) + 1;
-        const randomLeft = Math.floor(Math.random() * 500) + 1;
+        const randomTop = Math.floor(Math.random() * 70) + 5;
+        const randomLeft = Math.floor(Math.random() * 75) + 5;
 
-        fruit.style.top = randomTop + 'px';
-        fruit.style.left = randomLeft + 'px';
+        fruit.style.top = randomTop + '%';
+        fruit.style.left = randomLeft + '%';
         fruit.id = 'fruit';
         fruit.classList.add('fruit');
 
         theLeftSide.appendChild(fruit);
     };
     const leftSideImages = theLeftSide.cloneNode(true);
+    leftSideImages.classList.remove('leftSide');
     leftSideImages.removeChild(leftSideImages.lastChild);
     theRightSide.appendChild(leftSideImages);
 
     // console.log(`level: ${level} status: ${numOfFruits}`);
     if (level == 'Easy') {
         theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Easy'));
-        console.log("press easy last child button")
         theLeftSide.addEventListener('click', (event) => gameOver(event,'Easy'));
-        console.log("press easy button")
     } else if (level == 'Medium') {
         theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Medium'));
         theLeftSide.addEventListener('click', (event) => gameOver(event,'Medium'));
-        console.log("press medium button")
     } else if (level == 'Hard'){
         theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Hard'));
         theLeftSide.addEventListener('click', (event) => gameOver(event,'Hard'));
-        console.log("press hard button")
     }
 
 };
@@ -131,7 +128,7 @@ function nextScore(event, level) {
 let currentHighScore = 0;
 function theHighScore() {
     let currentScore = numOfScore;
-    console.log(`currentScore: ${currentScore} currentHS: ${currentHighScore}`)
+    // console.log(`currentScore: ${currentScore} currentHS: ${currentHighScore}`)
     if (currentScore > currentHighScore) {
         newNotif.innerText = `NEW HIGH SCORE! ${currentScore}`;
         currentHighScore = currentScore;
@@ -143,7 +140,6 @@ function theHighScore() {
     } else {
         catDiv.src = "/sad.png";
         // catDiv.src = "img/sad.png";
-        
     };
 };
 
@@ -159,13 +155,11 @@ function resetGame(event) {
 
 // game over Function
 function gameOver(event,level) {
-    console.log('showGameOver');
     event.stopPropagation();
     theHighScore();
     openPopUpGameOver();
     removeListener();
 
-    // console.log('end showGameOver');
     //removeEventListener
     easyLevel.removeEventListener('click', (event) => playGame(event, 'Easy'));
     mediumLevel.removeEventListener('click', (event) => playGame(event, 'Medium'));
@@ -189,7 +183,6 @@ function gameOver(event,level) {
 // Open Pop Up  and Close Pop Up Game Over
 function openPopUpGameOver() {
     document.querySelector('#popUpGameOver').classList.add('open-popup');
-    // console.log("open works")
 };
 function closePopUp() {
     document.querySelector('#popUpGameOver').classList.remove('open-popup');
@@ -219,14 +212,11 @@ function removeListener() {
     // theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Hard'));
     while (theLeftSide.firstChild) {
         theLeftSide.removeChild(theLeftSide.firstChild);
-        // console.log("remove left works")
     };
     while (theRightSide.firstChild) {
         theRightSide.removeChild(theRightSide.firstChild);
-        // console.log("remove right works")
     };
     score.innerText = 0;
     numOfScore = 0;
     numOfFruits = 0;
-    // console.log("end of removelistener");
 };
