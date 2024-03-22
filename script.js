@@ -18,7 +18,7 @@ const newNotif = document.createElement('div');
 // const catDiv = document.querySelector("#cat")
 const catDiv = document.createElement('img');
 catDiv.classList.add('cat');
-gameOverText.insertBefore(catDiv);
+popUpGameOver.insertBefore(catDiv, gameOverText) 
 
 // addEventListener
 document.querySelector('#startBtn').addEventListener('click', openPopUpLevel);
@@ -85,7 +85,7 @@ function generateFruit(level) {
     leftSideImages.removeChild(leftSideImages.lastChild);
     theRightSide.appendChild(leftSideImages);
 
-    console.log(`level: ${level} status: ${numOfFruits}`);
+    // console.log(`level: ${level} status: ${numOfFruits}`);
     if (level == 'Easy') {
         theLeftSide.lastChild.addEventListener('click', (event) => nextScore(event, 'Easy'));
         console.log("press easy last child button")
@@ -164,7 +164,7 @@ function gameOver(event,level) {
     openPopUpGameOver();
     removeListener();
 
-    console.log('end showGameOver');
+    // console.log('end showGameOver');
     //removeEventListener
     easyLevel.removeEventListener('click', (event) => playGame(event, 'Easy'));
     mediumLevel.removeEventListener('click', (event) => playGame(event, 'Medium'));
@@ -188,7 +188,7 @@ function gameOver(event,level) {
 // Open Pop Up  and Close Pop Up Game Over
 function openPopUpGameOver() {
     document.querySelector('#popUpGameOver').classList.add('open-popup');
-    console.log("open works")
+    // console.log("open works")
 };
 function closePopUp() {
     document.querySelector('#popUpGameOver').classList.remove('open-popup');
@@ -218,14 +218,14 @@ function removeListener() {
     // theLeftSide.lastChild.removeEventListener('click', (event) => nextScore(event, 'Hard'));
     while (theLeftSide.firstChild) {
         theLeftSide.removeChild(theLeftSide.firstChild);
-        console.log("remove left works")
+        // console.log("remove left works")
     };
     while (theRightSide.firstChild) {
         theRightSide.removeChild(theRightSide.firstChild);
-        console.log("remove right works")
+        // console.log("remove right works")
     };
     score.innerText = 0;
     numOfScore = 0;
     numOfFruits = 0;
-    console.log("end of removelistener");
+    // console.log("end of removelistener");
 };
