@@ -65,7 +65,8 @@ function generateFruit(level) {
     for (let i = 0; i < numOfFruits; i++) {
         const fruit = document.createElement('img');
         const randomImg = Math.floor(Math.random() * fruitImg.length) + 1
-        fruit.src = `img/${randomImg}.png`;
+        // fruit.src = `img/${randomImg}.png`;
+        fruit.src = `${randomImg}.png`;
 
         const randomTop = Math.floor(Math.random() * 400) + 1;
         const randomLeft = Math.floor(Math.random() * 500) + 1;
@@ -133,9 +134,12 @@ function theHighScore() {
         highScore.innerText = currentHighScore;
         newNotif.style.marginBottom = '30px';
         notifDiv.appendChild(newNotif);
-        catDiv.src = "img/happy.png";
+        catDiv.src = "happy.png";
+        // catDiv.src = "img/happy.png";
     } else {
-        catDiv.src = "img/sad.png";
+        catDiv.src = "sad.png";
+        // catDiv.src = "img/sad.png";
+        
     };
 };
 
