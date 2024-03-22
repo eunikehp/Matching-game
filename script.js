@@ -15,7 +15,10 @@ const theLeftSide = document.querySelector('#leftSide');
 const theRightSide = document.querySelector('#rightSide');
 const notifDiv = document.querySelector('#notifDiv');
 const newNotif = document.createElement('div');
-const catDiv = document.querySelector("#cat")
+// const catDiv = document.querySelector("#cat")
+const catDiv = document.createElement('img');
+catDiv.classList.add('cat');
+gameOverText.insertBefore(catDiv);
 
 // addEventListener
 document.querySelector('#startBtn').addEventListener('click', openPopUpLevel);
