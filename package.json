@@ -1,7 +1,7 @@
 {
-  "name": "matching-game",
+  "name": "fruit-matching-game",
   "version": "1.0.0",
-  "description": "a simple game website",
+  "description": "",
   "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
