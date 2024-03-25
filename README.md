@@ -5,7 +5,7 @@
 ![Stars](https://img.shields.io/badge/stars-13-yellow)-->
 
 ![Untitled design (1)](https://github.com/eunikehp/Matching-game/assets/104567399/626895db-d03a-4a62-aae8-f66ecc9535a0)
-[Check and play the game here](fruit-matching-game-f82ec.web.app)
+[Check and play the game here](https://fruit-matching-game-f82ec.web.app/)
 
 <!-- TABLE OF CONTENTS -->
 
