@@ -18,26 +18,16 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#deployment">Deployment</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
 ## About The Project
 
-This project is a simple matching game, called Fruit Matching Game. It is made in HTML, CSS, JavaScript. It allows the user play the game, get a (high)score, select level difficulty and reset the game. 
+This project is a simple matching game, called Fruit Matching Game. The web app is built with Parcel and dependencies HTML, JavaScript, and CSS. The project allows the user to play the game, get a (high)score, select the level of difficulty, and reset the game. 
 The game is about finding the difference between two boxes. 
 The left(top) and right(bottom) sides are identical, except for one thing: the left(top) side has one extra fruit. 
 The project is a responsive website that can be accessed using mobile phones, tablets, and computers.
@@ -54,8 +44,6 @@ The user can choose the level that they desire. The game has 3 levels, easy, med
    * [HTML5](https://en.wikipedia.org/wiki/HTML5)
    * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)  
    * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-
-#### Others:
    * [Parcel](https://parceljs.org/getting-started/webapp/)
    * [Firebase](https://firebase.google.com/)    
    * [Git](https://git-scm.com)  
