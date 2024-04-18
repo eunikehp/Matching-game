@@ -220,9 +220,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [Eunike Pardede](www.linkedin.com/in/eunikepardede) - eunikehedriani@gmail.com
-
-Project Link: [https://github.com/eunikehp/Matching-game](https://github.com/eunikehp/Matching-game)
+[Eunike Pardede](www.linkedin.com/in/eunikepardede) - eunikehedriani@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
