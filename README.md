@@ -38,8 +38,8 @@ I hope you enjoy and I look forward to your contributions!
 ### Instructions
 To play and win this game, the user has to find the difference between the two boxes and click on one extra fruit on the left(top) box.
 If anything except the correct fruit is clicked, a message is displayed saying that the game is over and the score(if the user reaches a higher score). 
-If the correct face is clicked, all the currently displayed fruits are removed and a new set of fruits is shown at random positions.
-The user can choose the level that they desire. The game has 3 levels, easy, medium, and hard. The hard level will add more fruits rather than other levels.
+If the correct fruit is clicked, all the current displayed fruits are removed and a new set of fruits is shown at random positions.
+The game has 3 levels, easy, medium, and hard. The user can choose the level that they desire. The hard level will add more fruits rather than other levels.
 
 ### Built With
 
@@ -54,8 +54,7 @@ The user can choose the level that they desire. The game has 3 levels, easy, med
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Features
-
+## Features
 1. Score Counter: Keep track of the player's score, which could be based on factors like time taken, number of moves, or a combination of both.
 2. Restart Button: Provide a way for the player to restart the game if they want to try again.
 3. Level Options: Offer different levels that the player can choose from to customize their experience.
@@ -65,26 +64,32 @@ The user can choose the level that they desire. The game has 3 levels, easy, med
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Takeaways
-
+## Takeaways
 1. DOM Manipulation: Learn how to manipulate the Document Object Model (DOM) using JavaScript to dynamically update the content and structure of the web page.
-2. Event Handling: Gain experience in handling user interactions by responding to events such as clicks or keyboard inputs.
+2. Event Handling: Gain experience in handling user interactions by responding to events such as clicking the button or image.
 3. CSS Styling: Practice styling the game using CSS to make it visually appealing and user-friendly.
-4. Game Logic: Develop algorithms to implement the game's logic, such as matching pairs of cards and tracking the player's progress.
+4. Game Logic: Develop algorithms to implement the game's logic, such as matching pairs of fruits and tracking the player's progress.
 5. Debugging Skills: Building a game involves debugging and troubleshooting to identify and fix issues in the code.
 6. User Experience (UX): Gain insights into designing for a positive user experience, including providing feedback, clear instructions, and visual cues.
 7. Problem-Solving: Encounter challenges along the way and develop problem-solving skills when finding solutions to overcome them.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
+## Future Features
+1. Enhance the gaming experience by adding sound effects for fruit matches, and victory celebrations.
+2. Add a timer to track how long it takes the player to complete the game. Display the elapsed time to encourage competition or challenge.
+3. Implement an animation effect to make the fruits bigger when clicked.
 
-#### Push to GitHub
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Deployment
+
+### Push to GitHub
 1. The project was developed using Visual Studio Code.
 2. Committed to Git as a local repository.
 3. Pushed to GitHub, a remote repository.
 
-#### Deploy with Firebase 
+### Deploy with Firebase 
 The project was deployed to the cloud using Firebase and Firebase Hosting. The following steps:   
 1. To use Firebase, you will need a regular Google account. If you don't have a Google account, you can [create a free Google account here](https://accounts.google.com/lifecycle/steps/signup/name?ddm=0&dsh=S-838546182:1711363031954401&flowEntry=SignUp&flowName=GlifWebSignIn&theme=mn&TL=AEzbmxxz5L6XGCExY9PGDVJb5wSVpW6FA5y7czSRcGizL_vePYHAst18RAoktji0).
 2. Install the Firebase CLI on your computer.
